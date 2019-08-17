@@ -1,0 +1,15 @@
+:root {
+    background: #3880ff;
+    --ion-background-color: #3880ff;
+    --ion-text-color: var(--ion-color-primary);
+    --ion-header-size: 40px;
+}
+
+ion-content {
+    --ion-background-color: transparent;
+}
+
+ion-fab {
+    direction: ltr;
+    display: flex;
+}

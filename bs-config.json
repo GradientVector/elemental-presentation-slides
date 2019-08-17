@@ -1,0 +1,11 @@
+{
+  "files": [
+    "./dist/**/*.{html,htm,css,js,svg}"
+  ],
+  "server": { "baseDir": "./dist" },
+  "open": false,
+  "port": 8000,
+  "ui": {
+    "port": 8001
+  }
+}

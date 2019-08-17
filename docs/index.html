@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+
+    <base href="/"/>
+
+    <title>Elemental</title>
+
+    <meta property="og:site_name" content="Elemental">
+    <meta property="og:title" content="Elemental">
+
+    <meta name="author" content="John Harvey">
+
+    <meta name="description" content="Customizable User Interfaces with Dynamic Components in Angular">
+    <meta property="og:description" content="Customizable User Interfaces with Dynamic Components in Angular">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gradientvector.github.io/elemental-presentation-slides">
+
+    <meta property="og:image" content="https://gradientvector.github.io/elemental-presentation-slides/assets/img/deckdeckgo.png">
+    <meta property="og:image:type" content="image/png">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#3880ff">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#3880ff">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    await navigator.serviceWorker.register('service-worker.js');
+                } catch (e) {
+                    console.warn('No service worker registered');
+                }
+            });
+        }
+    </script>
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <style>
+        /* Until Web Components are loaded, don't display content */
+        body {
+            background: #3880ff;
+        }
+
+        ion-app.loading, ion-app.loading a {
+            color: transparent;
+        }
+
+        ion-app.loading a {
+            color: transparent;
+        }
+
+        ion-app.loading {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+<ion-app class="loading">
+    <ion-content force-overscroll="false" scroll-y="false">
+        <deckgo-deck id="slider" pager-percentage="false">
+
+            <!-- BEGIN: Edit your slides -->
+
+            <deckgo-slide-countdown until="2019-08-17T10:30:00.000-05:00" style="--background: #F1F1F1;">
+                <h1 slot="title" style="color:#82bf40;">
+                    Presentation starts in:
+                </h1>
+                <p slot="days">Days</p>
+                <p slot="hours">Hours</p>
+                <p slot="minutes">Minutes</p>
+                <p slot="seconds">Seconds</p>
+                <div slot="notes" style="display:flex;align-items:center;">
+                    <div>
+                        <h2 style="color: #52c2c8;">Want to follow along?</h2>
+                        <h3><a href="https://gradientvector.github.io/elemental-presentation-slides">https://gradientvector.github.io/elemental-presentation-slides</a></h3>
+                    </div>
+                    <div>
+                        <deckgo-qrcode content="https://gradientvector.github.io/elemental-presentation-slides" style="--deckgo-qrcode-size: 450px;">
+                        </deckgo-qrcode>                        
+                    </div>
+                </div>
+            </deckgo-slide-countdown>
+
+            <deckgo-slide-title>            
+                <h2 slot="title">Interesting Tidbit</h2>
+                <div slot="content">
+                    <p>How Diablo was completely Reverse Engineered without Source Code</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5tADL_fmsHQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>        
+            </deckgo-slide-title>
+            
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">What is this presentation about?</h2>
+                <!-- <div no-shadow slot="content">   
+                    <div>
+                        <img src="assets/icons/elemental.svg" width="100px;" />
+                        Elemental
+                    </div>
+                     
+                    <span style="margin-left: 8px; margin-right: 8px; color: var(--ion-color-secondary);text-decoration: underline;"><b>Customizable User Interfaces</b></span>
+                    <span  style="margin-left: 8px; margin-right: 8px;">using <i>Dynamic Components</i></span>
+                    <span  style="margin-left: 8px; margin-right: 8px;">in <b style="color: #b52e31;">Angular</b></span>
+                </div> -->
+                <ul slot="content" style="list-style: none; font-size: 40px;">
+                    <li style="margin:10px;"><b>Customizable User Interfaces</b></li>    
+                    <li style="margin:10px;">using <i style="text-decoration: underline;">Dynamic Components</i></li> 
+                    <li style="margin:10px;">in <b style="color: #b52e31;">Angular</b></li>    
+                </ul>
+            </deckgo-slide-title>
+            
+            <deckgo-slide-author img-src="assets/img/john.jpg" img-alt="John Harvey">
+                <h1 slot="title">John Harvey</h1>
+                <div slot="author">
+                    <h2>John Harvey</h2>
+                    <p>Software development consultant at <span style="color:#82bf40;">Sparkhound</span> in Baton Rouge, LA.</p>
+                    <p>Received M.S. in Computer Engineering from <b style="color: #461D7C;">LSU</b>.</p>
+                    <p>Interested in all things <span style="color: #b52e31;">Angular</span>, <span style="color: #5c2d91;">.NET</span>, and maybe <span style="color:#b7410e;">Rust</span>.</p>
+                </div>
+                <div slot="social-link">
+                    <deckgo-social github="gradientvector">
+                        <ion-icon alt="John on GitHub" slot="icon" name="logo-github" margin-start margin-end></ion-icon> 
+                        github
+                    </deckgo-social>
+                </div>
+                <div slot="social-link">
+                    <deckgo-social linkedin="john-timothy-harvey/">
+                        <ion-icon alt="John on Linkedin" slot="icon" name="logo-linkedin" margin-start margin-end></ion-icon> 
+                        linkedin
+                    </deckgo-social>
+                </div>
+                <div slot="social-link">
+                    <deckgo-social full-url="https://thegradientvector.com/">
+                        <ion-icon alt="John on thegradientvector.com" slot="icon" name="logo-chrome" margin-start margin-end></ion-icon> 
+                        blog
+                    </deckgo-social>
+                </div>
+            </deckgo-slide-author>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">True Fact</h2>
+                <div slot="content">
+                    <p style="font-size: 40px; font-weight: bold;">
+                        Content Management Systems Rule!
+                    </p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Benefits</h2>
+                <div slot="content">
+                    <p><img src="assets/img/wrench.png" width="100px">
+                        Easy to modify content</p>
+                    <p><img src="assets/img/distributed.png" width="100px;">
+                        Distributed ownership</p>
+                    <p><img src="assets/img/recycle.jpg" width="100px;">
+                        Reuseable across projects</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Another True Fact</h2>
+                <div slot="content">
+                    <p style="font-size: 40px; font-weight: bold;">
+                            Content Management Systems Are Bad, and they should feel bad!
+                    </p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Problems</h2>
+                <div slot="content">
+                    <p>Inefficient developer experience.
+                        <deckgo-gif src="assets/img/david-splosion.gif" alt="david splosion"></deckgo-gif>
+                    </p>
+                    <p>Bad UI/UX! <br/> (editing is slow or buggy, content gets jumbled on save, styles overwrite the editor, etc...)</p>
+                    <p>Monolithic (more features than needed)</p>
+                    <p>Limited backend choices (PHP)</p>
+                    <p>Do not support new trends well like SPA Frameworks, Mobile, etc.</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Existing CMSs</h2>
+                <div slot="content" style="display:grid; grid-template-columns: 33% 33% 33%; width: 50%;">
+                    <p>
+                        <img src="assets/img/wordpress.png" width="50px;">
+                        Wordpress</p>
+                    <p>
+                        <img src="assets/img/drupal.png" width="40px;">
+                        Drupal</p>
+                    <p>
+                        <img src="assets/img/kentico.jpg" width="40px;">
+                        Kentico</p>
+                    <p>
+                       <img src="assets/img/sitefinity.png" width="40px;">
+                        Sitefinity</p>
+                    <p>
+                        <img src="assets/img/wix.png" width="40px;">
+                        Wix</p>
+                    <p>
+                        <img src="assets/img/squarespace.png" width="40px;">
+                        Squarespace</p>
+                    <p></p>
+                    <p>...and many more!</p>
+                    <p></p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Headless CMS to the rescue?</h2>
+                <div slot="content">
+                    <p>Much better content management ...</p>
+                    <p>... but they gave up on the UI features!</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Modular Productivity Software</h2>
+                <div slot="content">
+                    <img src="assets/img/airtable.png" width="830px;">
+                    <p>AirTable, Coda, Notion, etc...</p>
+                    <p><a href="https://www.slashgear.com/conquer-2019-with-these-new-breed-of-productivity-tools-01559572/">https://www.slashgear.com/conquer-2019-with-these-new-breed-of-productivity-tools-01559572/</a></p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">We need a new CMS!</h2>
+                <div no-shadow slot="content">                    
+                    <img src="assets/img/standards.png">
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">What do we need?</h2>
+                <div slot="content">
+                    <p>Components!</p>
+                    <p>Dynamic Creation</p>
+                    <p>Visual Layout/Content Editing</p>
+                    <p>Bonus: Lazy Loading and Plugins</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Elemental</h2>
+                <div slot="content">
+                    <img src="assets/icons/elemental.svg" width="200px;" />
+                    <p>
+                        <a href="https://github.com/gradientvector">
+                            https://github.com/gradientvector
+                        </a>
+                    </p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Components</h2>
+                <div slot="content">
+                    <p>What is a component?</p>
+                    <p>How do we create them?</p>
+                    <p>How do we share them?</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">So what is a component exactly?</h2>
+                <div slot="content">
+                    <img src="assets/img/what-would-you-say-you-do-here.gif" width="400px;" />
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                    <h2 slot="title">Legos for programmers</h2>
+                <div slot="content">
+                    <img src="assets/img/legos.jpg" width="400px;" />
+                    <p>Also called Blocks, Elements, or Widgets for old folks</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Features</h2>
+                <div slot="content">
+                    <p>Inputs</p>
+                    <p>Outputs</p>
+                    <p>Services (Dependency Injection)</p>
+                    <p>Content Projection</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Example</h2>
+                <div slot="content">
+                    <img src="assets/img/google.png">
+                </div>
+            </deckgo-slide-title>
+            <deckgo-slide-title>
+                <h2 slot="title">Example</h2>
+                <div slot="content">
+                    <img src="assets/img/google-components.png">
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Date Picker</h2>
+                <div slot="content">
+                    <img src="assets/img/datepicker.PNG">
+                    <p>
+                        <a href="https://valor-software.com/ngx-bootstrap/#/datepicker#inline-datepicker">
+                            https://valor-software.com/ngx-bootstrap/#/datepicker#inline-datepicker
+                        </a>
+                    </p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Inputs</h2>
+                <div slot="content">
+                    <deckgo-highlight-code>
+                        <code slot="code">
+&lt;input type=&quot;text&quot; value=&quot;initial value&quot;&gt;
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Outputs</h2>
+                <div slot="content">
+                    <deckgo-highlight-code editable="true">
+                        <code slot="code">
+&lt;button onclick="console.log(event);">Click Me&lt;/button>
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Services (Dependency Injection)</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="6,6">
+                        <code slot="code">
+@Component({
+    selector: 'container',
+    templateUrl: './container.component.html',
+    styleUrls: ['./container.component.scss'],  
+})
+export class ContainerComponent {
+    constructor(private sanitizer: DomSanitizer) { 
+    }
+}
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Content Projection</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="markup" highlight-lines="1,1">
+                        <code slot="code">
+&lt;div>
+    &lt;button>Click Me&lt;/button>
+&lt;/div>
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Content Projection in Angular</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="markup" highlight-lines="1,2">
+                        <code slot="code">
+&lt;my-custom-component>
+    &lt;h1>Title&lt;/h1>
+    &lt;button>Click Me&lt;/button>
+&lt;/my-custom-component>
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Demo</h2>
+                <div slot="content">
+                    Using Angular Components in a Template
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Easy Component Creation</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">What is a component?</p>
+                    <p>How do we create them?</p>
+                    <p>How do we share them?</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Creating an Angular Component</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="3,3 9,9 10,10">
+                        <code slot="code">
+@Component({
+    selector: 'container',
+    template: `
+        &lt;p>{{someInput}}&lt;/p>
+        &lt;button (click)="someInputChange($event)">Click Me&lt;/button>
+        &lt;ng-content select="slot-name">&lt;/ng-content>
+    `,
+    styleUrls: ['./container.component.scss'],  
+})
+export class ContainerComponent {
+    constructor(private sanitizer: DomSanitizer) { 
+    }
+
+    @Input() someInput: string;
+
+    @Output() someInputChange = new EventEmitter&lt;string>();
+}    
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Easy Component Creation</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">What is a component?</p>
+                    <p style="text-decoration: line-through;">How do we create them?</p>
+                    <p>How do we share them?</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Sharing is Caring</h2>
+                <div slot="content" style="display:flex;">
+                    <div style="margin:20px;">
+                        <p>Angular CLI makes it easy to create a Library!</p>
+                        <deckgo-highlight-code language="bash">
+                            <code slot="code">
+    > ng generate library my-lib
+                            </code>
+                        </deckgo-highlight-code>
+                    </div>
+                    <div style="margin:10px;">
+                        <img src="assets/img/library-structure.PNG" width="500px">
+                    </div>
+                </div>
+            </deckgo-slide-title>
+            
+            <deckgo-slide-title>
+                <h2 slot="title">Official Way to Build Libraries</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="bash">
+                        <code slot="code">
+> ng build my-lib --watch
+> ng serve
+                        </code>
+                    </deckgo-highlight-code>
+                    <p>Works, but I ran into occasional file lock issues...</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Pro Tip!</h2>
+                <div slot="content">
+                    <p>Configure your <b>tsconfig.json</b> file to reference the library code directly!</p>
+                    <deckgo-highlight-code language="json">
+                        <code slot="code">
+{
+  "compilerOptions": {  
+    "paths": {
+      "elemental": [
+        "projects/elemental/src/public-api"
+      ],
+      "elemental/*": [
+        "projects/elemental/src/public-api/*"
+      ],
+      // ....
+    }
+  }
+  // ....
+}
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Component Libraries</h2>
+                <div slot="content">
+                    <p><a href="https://valor-software.com/ngx-bootstrap/">
+                        <img src="assets/img/ngx-bootstrap.svg" width="60px">
+                        ngx-bootstrap</a></p>
+                    <p><a href="https://mdbootstrap.com/">
+                        <img src="assets/img/mdb.png" width="50px;">
+                        md-bootstrap</a></p>
+                    <p><a href="https://material.angular.io/">
+                        <img src="assets/img/angular-white-transparent.svg" width="30px;" style="background-color:#3f51b5;">
+                        Angular Material</a></p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Web Components</h2>
+                <div slot="content">
+                    <img src="assets/img/web-components.png" width="600px;">
+                    <p>Framework Independent (works with Angular, React, Vue, plain JavaScript, etc.)</p>
+                    <p><a href="https://www.youtube.com/watch?v=_QU0mpyF7bQ">Angular Elements</a></p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Components Components Components</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">What is a component?</p>
+                    <p style="text-decoration: line-through;">How do we create them?</p>
+                    <p style="text-decoration: line-through;">How do we share them?</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">What do we need?</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">Components!</p>                    
+                    <p>Dynamic Creation</p>
+                    <p>Visual Layout/Content Editing</p>
+                    <p>Bonus: Lazy Loading and Plugins</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">How do we create dynamic components in Angular?</h2>
+                <div slot="content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/q2Exs-82tkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </deckgo-slide-title>
+            
+            <deckgo-slide-title>
+                <h2 slot="title">
+                    <a href="https://angular.io/guide/dynamic-component-loader">
+                    Component Factories</a>
+                </h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="markup" highlight-lines="0,0">
+                        <code slot="code">
+&lt;ng-container #host>&lt;/ng-container>
+                        </code>
+                    </deckgo-highlight-code>
+                    <deckgo-highlight-code language="typescript">
+                        <code slot="code">
+export class SomeComponent {
+    constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+
+    @ViewChild('host', {static: true, read: ViewContainerRef }) host: ViewContainerRef;
+
+    loadComponent() {
+        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(MyComponent);
+        const viewContainerRef = this.host.viewContainerRef;
+        const componentRef = viewContainerRef.createComponent(componentFactory);
+        
+        // You can set Input/Output properties!
+        (&lt;MyComponent>componentRef.instance).property = property;
+    }
+}
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Entry Components</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript">
+                        <code slot="code">
+entryComponents: [ 
+    HeroJobAdComponent, 
+    HeroProfileComponent 
+],
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Creating a Schema to describe components</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript">
+                        <code slot="code">
+schema: ElementalBootstrapSchema = {
+  type: "container",
+  props: { fluid: true } 
+};
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Mapping String to Component Constructor</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript">
+                        <code slot="code">
+export let elementalTypes = {
+  "container": ContainerComponent,
+  "row": RowComponent,
+  "input": InputComponent,
+  "input-text": InputTextComponent,
+  "input-checkbox": InputCheckboxComponent,
+  "input-file": InputFileComponent,
+};
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Make a Component to Handle Dynamic Creation</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="markup">
+                        <code slot="code">
+&lt;elemental [schema]="schema">&lt;/elemental>
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Nesting Schemas</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript">
+                        <code slot="code">
+schema: ElementalBootstrapSchema = {
+  type: "container",
+  props: { fluid: true },
+  children: [
+    {
+      type: "row",
+      props: {},
+      children: [
+        {
+          type: "input",
+          props: {}
+        }, 
+      ]
+    }
+  ]
+};
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">TypeScript assistance when typing schema by hand?</h2>
+                <div slot="content" style="display: flex; align-items: start; align-content: center;">
+                    <deckgo-highlight-code language="typescript" highlight-lines="4,4 8,8">
+                        <code slot="code">
+export type ElementalBootstrapSchema = 
+  {
+    type: "container",
+    props: ContainerComponentData,
+    children?: ElementalBootstrapSchema[],
+  } | {
+    type: "row",
+    props: RowComponentData,
+    children?: ElementalBootstrapSchema[],
+  } | {
+    type: "input-text",
+    props: InputTextComponentData,
+  } | {
+    type: "input-checkbox",
+    props: InputCheckboxComponentData,
+  };
+                        </code>
+                    </deckgo-highlight-code>
+                    <div>
+                        <img src="assets/img/typescript-type.png" width="1000px;">
+                    </div>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Use Cases</h2>
+                <div slot="content">
+                    <p>CMS</p>
+                    <p>Dashboards</p>
+                    <p>Lazy Loading</p>
+                    <p>Code Generation</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Demo</h2>
+                <div slot="content">
+                    <p>Create a schema by hand.</p>
+                </div>
+            </deckgo-slide-title>            
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">What about forms?</h2>
+                <div slot="content">
+                    <p>Template-driven vs Reactive</p>
+                    <p>Custom Controls? Nested? Projected?</p>
+                    <p>Collecting results into a model</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">
+                    <a href="https://ngx-formly.github.io/ngx-formly/">
+                        <img src="assets/img/ngx-formly.png" width="50px">
+                        ngx-formly</a>
+                    </h2>
+                <div slot="content" style="display: flex; align-items:center; align-content: center;">
+                    <div style="width: 50%">
+                        <deckgo-highlight-code language="markup">
+                            <code slot="code">
+&lt;formly-form 
+    [model]="model" 
+    [fields]="fields" 
+    [options]="options" 
+    [form]="form">
+&lt;/formly-form>
+                            </code>
+                        </deckgo-highlight-code>
+                    </div>
+                    <div style="width: 50%">
+                        <deckgo-highlight-code language="typescript">
+                            <code slot="code">
+fields: FormlyFieldConfig[] = [
+    {
+      key: 'text',
+      type: 'input',
+      templateOptions: {
+        label: 'Text',
+        placeholder: 'Formly is terrific!',
+        required: true,
+      },
+    },
+];
+                            </code>
+                        </deckgo-highlight-code>
+                    </div>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Control Value Accessor</h2>
+                <div slot="content">
+                    <p>Interface for custom controls</p>
+                    <deckgo-highlight-code language="typescript">
+                        <code slot="code">
+interface ControlValueAccessor {
+    writeValue(obj: any): void
+    registerOnChange(fn: any): void
+    registerOnTouched(fn: any): void
+    setDisabledState(isDisabled: boolean)?: void
+}
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Angular Form Patterns</h2>
+                <div slot="content">
+                    <p>Explains how to handle validation as well!</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CD_t3m2WMM8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Using ngModel</h2>
+                <div slot="content">
+                    <p>Allows us to use the dynamic componet just like any other control</p>
+                    <deckgo-highlight-code language="markup">
+                        <code slot="code">
+&lt;elemental [schema]="schema" [(ngModel)]="model">&lt;/elemental>
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">What do we need?</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">Components!</p>  
+                    <p style="text-decoration: line-through;">Dynamic Creation</p>
+                    <p>Visual Layout/Content Editing</p>
+                    <p>Bonus: Lazy Loading and Plugins</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Visual Layout/Content Editor</h2>
+                <div slot="content">
+                    <p>Many users would like to move things around visually!</p>
+                    <p>End-users</p>
+                    <p>Designers</p>
+                    <p>Grandma</p>
+                    <p>... and even developers!</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Example</h2>
+                <div slot="content">
+                    <p><b>Wordpress</b> (Gutenberg, Bakery, etc...)</p>
+                    <img src="assets/img/gutenberg.png" width="900px">
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Visual Layout/Content Editor</h2>
+                <div slot="content">
+                    <p>Dragon-drop?</p>
+                    <img src="assets/img/trogdor.jpg">
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Demo</h2>
+                <div slot="content">
+                    <p>Angular CDK drag-and-drop</p>
+                    <p>
+                        <a href="https://material.angular.io/cdk/drag-drop/overview">
+                            https://material.angular.io/cdk/drag-drop/overview
+                        </a>
+                    </p>
+                </div>
+            </deckgo-slide-title>
+            
+            <deckgo-slide-title>
+                <h2 slot="title">What do we need?</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">Components!</p>  
+                    <p style="text-decoration: line-through;">Dynamic Creation</p>
+                    <p style="text-decoration: line-through;">Visual Layout/Content Editing</p>
+                    <p>Bonus: Lazy Loading and Plugins</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Lazy Loading and Plugins</h2>
+                <div slot="content">
+                    <p>
+                        <a href="https://blog.angularindepth.com/building-extensible-dynamic-pluggable-enterprise-application-with-angular-aed8979faba5">
+                            https://blog.angularindepth.com/building-extensible-dynamic-pluggable-enterprise-application-with-angular
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/manfredsteyer/ngx-build-plus/">ngx-build-plus</a>
+                    </p>
+                    <p>
+                        <a href="https://webpack.js.org/configuration/externals/">
+                        Webpack Externals</a>
+                    </p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">package.json</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="bash" highlight-lines="1,1">
+                        <code slot="code">
+> ng build --project elemental-bootstrap-bundle --prod --output-hashing none --single-bundle true --extraWebpackConfig webpack.extra.js
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>            
+
+            <deckgo-slide-content>
+                <h1 slot="title">webpack.extra.js</h1>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="1,1">
+                        <code slot="code">
+module.exports = {
+    output: {
+        library: 'elemental-bundle',
+        libraryTarget: 'umd'
+    },
+    "externals": {
+        "rxjs": "rxjs",
+        "@angular/core": "ng.core",
+        "@angular/common": "ng.common",
+        "@angular/platform-browser": "ng.platformBrowser",        
+        "@angular/platform-browser-dynamic": "ng.platformBrowserDynamic",
+        "@angular/elements": "ng.elements"
+    }
+}
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-title>
+                <h2 slot="title">main.ts</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="4,4 5,6 7,7">
+                        <code slot="code">
+export * from '../../elemental-bootstrap/src/lib/elemental-bootstrap.module';
+
+// NOTE:
+// Dont worry if Angular Language Service shows errors when importing/exporting ngfactory.
+// It should still compile correctly.
+export * from '../../elemental-bootstrap/src/lib/elemental-bootstrap.module.ngfactory';
+
+import { ElementalBootstrapModuleNgFactory } from '../../elemental-bootstrap/src/lib/elemental-bootstrap.module.ngfactory';
+
+export default ElementalBootstrapModuleNgFactory;
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Gather the Exports</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="">
+                        <code slot="code">
+let exports = {};
+
+let module = {exports: exports};
+
+let modules = {
+    'ng.core': core,
+    'ng.common': common,
+    'ng.cdk': cdk,
+    'ng.platformBrowser': platformBrowser,
+    'ng.platformBrowserDynamic': platformBrowserDynamic,
+    'ngxLogger': ngxLoader,      
+    "rxjs": rxjs,
+};                        
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title>
+                <h2 slot="title">Load the Plugin and "Run" It</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="">
+                        <code slot="code">
+let url = `http://localhost:4200/${dynamicModule.url}`;
+
+let response = await this.http.get(url, { responseType: "text" }).toPromise();
+
+// shim 'require' and eval
+let require: any = (module) => modules[module];
+
+let func = Function("exports, module, require", response);
+
+let result = func(exports, module, require);
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>                
+
+            <deckgo-slide-title>
+                <h2 slot="title">Instantiate the new Module and Component</h2>
+                <div slot="content">
+                    <deckgo-highlight-code language="typescript" highlight-lines="">
+                        <code slot="code">
+let plugin = exports['ElementalBootstrapModuleFactory'];
+
+let module = plugin.ngModuleFactory.create(this.injector);
+
+let component = plugin.componentFactories[0].create(this.injector, null, null, module);
+                        </code>
+                    </deckgo-highlight-code>
+                </div>
+            </deckgo-slide-title>
+            
+            <deckgo-slide-title>
+                <h2 slot="title">What do we need?</h2>
+                <div slot="content">
+                    <p style="text-decoration: line-through;">Components!</p>  
+                    <p style="text-decoration: line-through;">Dynamic Creation</p>
+                    <p style="text-decoration: line-through;">Visual Layout/Content Editing</p>
+                    <p style="text-decoration: line-through;">Bonus: Lazy Loading and Plugins</p>
+                </div>
+            </deckgo-slide-title>
+
+            <!-- <deckgo-slide-youtube src="https://www.youtube.com/watch?v=CD_t3m2WMM8">
+                <h3 slot="title">Angular Form Patterns - Control Value Accessor</h3>
+            </deckgo-slide-youtube> -->
+
+            <!-- <deckgo-slide-content style="--background: white; --color: var(--ion-color-tertiary); --ion-item-background: white;">
+                <h2 slot="title">Features</h2>
+                <ion-list slot="content" lines="none" padding-top>
+                    <ion-item style="--color: var(--ion-color-dark);">
+                        <ion-label text-wrap>✏️ Edit your presentation with <strong>HTML</strong> or <strong>Markdown</strong></ion-label>
+                    </ion-item>
+
+                    <ion-item style="--color: var(--ion-color-dark);">
+                        <ion-label text-wrap>📰️ Use predefined <strong>templates</strong></ion-label>
+                    </ion-item>
+
+                    <ion-item style="--color: var(--ion-color-dark);">
+                        <ion-label text-wrap>🌈 <strong>Style</strong> your presentation quickly</ion-label>
+                    </ion-item>
+
+                    <ion-item style="--color: var(--ion-color-dark);">
+                        <ion-label text-wrap>🌅 Build for performance with <strong>lazy</strong> loaded content</ion-label>
+                    </ion-item>
+
+                    <ion-item style="--color: var(--ion-color-dark);">
+                        <ion-label text-wrap>🎁 Free and <strong>open source</strong></ion-label>
+                    </ion-item>
+                </ion-list>
+            </deckgo-slide-content> -->
+
+            <!-- <deckgo-slide-split style="color: var(--ion-color-tertiary); --slide-split-color-start: white; --slide-split-align: center; --slide-split-text-align: center; --slide-split-background-end: white; --slide-split-color-end: var(--ion-color-tertiary);">
+                <h1 slot="title">Progressive Web App</h1>
+                <h3 slot="start" style="color: var(--ion-color-dark);">Publish your presentation as a <strong>Progressive Web App</strong> with <strong>offline</strong> support</h3>
+                <div slot="end" style="text-align: center; width: 100%;">
+                    <img data-src="https://deckdeckgo.com/assets/img/deckdeckgo-homecoming.png" style="width: 20vw;" alt="Publish your presentation as a Progressive Web App with offline support"/>
+                </div>
+            </deckgo-slide-split> -->
+
+            <deckgo-slide-title reveal="true">
+                <h2 slot="title">Recap</h2>
+                <div slot="content">
+                    <p>Components Rule</p>
+                    <p>They can be Dynamic</p>
+                    <p>Make your own CMS</p>
+                </div>
+            </deckgo-slide-title>
+
+            <deckgo-slide-title style="--background: var(--ion-color-dark); --color: var(--ion-color-light);">
+                <h2 slot="title">Discover the elements! 🌎🌀🌊🔥❤️</h2>
+                <div slot="content">
+                    <!-- <div style="padding: 32px;">
+                        <code style="background-image: var(--ion-color-dark);" padding>
+                            $ npm init deckdeckgo
+                        </code>
+                    </div>
+
+                    <p style="margin-bottom: 0; margin-top: 16px; font-size: 0.5em;">
+                        Dive deeper with the <a href="https://docs.deckdeckgo.com">Getting Started guide</a>
+                    </p> -->
+
+                    <p>Your feedback is valuable!</p>
+
+                    <div style="display:flex;align-items:center;">
+                        <div>
+                            <h3>Session Evaluations are ONLINE ONLY</h3>
+                            <img src="assets/img/session-evaluation.png">    
+                        </div>
+                        <div>
+                            <p>                                
+                                <a href="https://sqlsatbr.com/sessions/sessionevaluation.aspx">SQLSatBR.com/Sessions/SessionEvaluation.aspx</a>
+                            </p>
+                            <div>
+                                <deckgo-qrcode content="https://sqlsatbr.com/sessions/sessionevaluation.aspx" style="--deckgo-qrcode-size: 350px; background: white;">
+                                </deckgo-qrcode> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 0; margin-top: 48px; font-size: 0.5em;">
+                        Created by John Harvey
+                    </p>
+                    <p no-margin no-padding style="font-size: 0.8em; margin-top: 8px;">
+                        <a href="https://github.com/gradientvector"><ion-icon name="logo-github"></ion-icon></a>
+                        <a href="https://www.linkedin.com/in/john-timothy-harvey"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="https://thegradientvector.com/"><ion-icon name="logo-chrome"></ion-icon></a>
+                    </p>
+                </div>
+            </deckgo-slide-title>
+
+            <!-- END: Edit your slides -->
+
+            <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon name="more"></ion-icon></a>
+
+        </deckgo-deck>
+
+        <!-- <deckgo-remote></deckgo-remote> -->
+
+    </ion-content>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" id="navigation">
+        <button onclick="previousSlide()" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon name="arrow-back" ariaLabel="Previous slide" style="font-size: 1.4em;"></ion-icon>
+        </button>
+
+        <button onclick="nextSlide()" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon name="arrow-forward" ariaLabel="Next slide" style="font-size: 1.4em;"></ion-icon>
+        </button>
+
+        <button onclick="presentSlidePicker()" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon name="list" md="md-list" ios="md-list" ariaLabel="Jump to a particular slide" style="font-size: 1.4em;"></ion-icon>
+        </button>
+
+        <button onclick="toggleFullScreen()" class="navigation ion-activatable hide-on-mobile">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon name="expand" ariaLabel="Full screen" style="font-size: 1.4em;"></ion-icon>
+        </button>
+    </ion-fab>
+
+    <!-- Ionic components anchors -->
+    <ion-popover-controller></ion-popover-controller>
+    <ion-modal-controller></ion-modal-controller>
+    <ion-alert-controller></ion-alert-controller>
+
+    <web-social-share show="false" style="--web-social-share-backdrop-opacity: 0.5;">
+        <ion-icon name="logo-twitter" ariaLabel="Twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon name="logo-reddit" ariaLabel="Reddit" slot="reddit" style="font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon name="logo-linkedin" ariaLabel="Linkedin" slot="linkedin" style="color: #0077b5; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon name="mail" slot="email" ariaLabel="Email" style="color: #ff8ea3; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon name="logo-whatsapp" ariaLabel="WhatsApp" slot="whatsapp" style="color: #25D366; font-size: 1.6rem; display: block;"></ion-icon>
+    </web-social-share>
+</ion-app>
+
+<noscript>
+    Please enable Javascript to access this presentation.
+</noscript>
+
+<script src="main.bc3e5cf270adf891cdd9.js?10868355744ffc4ac2b4"></script></body>
+</html>
